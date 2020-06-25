@@ -1,0 +1,29 @@
+<p>carte works!</p>
+<div>
+    <h2>Liste des cartes</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Categorie</th>
+            <th>Description</th>
+            <th>Nombre de carte</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let carte of srvCarte.cartes">
+            <td>{{ carte.nom }}</td>
+            <td>{{ carte.categorie }}</td>
+            <td>{{ carte.description }}</td>
+
+            <td>
+                les buttons
+                <!--<button (click)="editerEmploye(employe)" class="btn btn-warning m-1">Editer</button>
+                <button (click)="supprimerEmploye(employe)" class="btn btn-danger m-1">Supprimer</button>-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

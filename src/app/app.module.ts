@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PlateauComponent } from './plateau/plateau.component';
+import { CarteComponent } from './carte/carte.component';
 
 
 // Configuration des routes
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomepageComponent,
-    PlateauComponent
+    PlateauComponent,
+    CarteComponent
   ],
   imports: [
     BrowserModule,
