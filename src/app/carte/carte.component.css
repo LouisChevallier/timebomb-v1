@@ -1,0 +1,75 @@
+.cards-container-section{
+    display: flex;
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 280px;
+    height: 380px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-card p,.flip-card h1{
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    color: #fff!important;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: 10px solid #fd0;
+    border-radius: 10px;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-image:url("/assets/img/card-back.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back.classique {
+    background-image:url("/assets/img/cable-safe.jpg");
+}
+
+.flip-card-back.desamorcage {
+    background-image:url("/assets/img/cable-desamorcage.jpg");
+}
+
+.flip-card-back.bombe {
+    background-image:url("/assets/img/boom.jpg");
+}

@@ -18,12 +18,52 @@
             <td>{{ carte.categorie }}</td>
             <td>{{ carte.description }}</td>
 
-            <td>
-                les buttons
-                <!--<button (click)="editerEmploye(employe)" class="btn btn-warning m-1">Editer</button>
-                <button (click)="supprimerEmploye(employe)" class="btn btn-danger m-1">Supprimer</button>-->
-            </td>
+            <td>{{ carte.nombre }}</td>
         </tr>
         </tbody>
     </table>
+
+    <div class="cards-container-section">
+        <div *ngFor="let carte of srvCarte.cartes" class="flip-card">
+
+            <!-- Carte Classique -->
+            <div *ngIf="carte.idcat == 1" class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h1>Survolez la carte</h1>
+                </div>
+                <div class="flip-card-back classique">
+                    <h1>{{ carte.nom }}</h1>
+                    <p>{{ carte.categorie }}</p>
+                    <p>{{ carte.description }}</p>
+                </div>
+            </div>
+
+            <!-- Carte Desamorcage -->
+            <div *ngIf="carte.idcat == 2" class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h1>Survolez la carte</h1>
+                </div>
+                <div class="flip-card-back desamorcage">
+                    <h1>{{ carte.nom }}</h1>
+                    <p>{{ carte.categorie }}</p>
+                    <p>{{ carte.description }}</p>
+                </div>
+            </div>
+
+            <!-- Carte Bombe -->
+            <div *ngIf="carte.idcat == 3" class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h1>Survolez la carte</h1>
+                </div>
+                <div class="flip-card-back bombe">
+                    <h1>{{ carte.nom }}</h1>
+                    <p>{{ carte.categorie }}</p>
+                    <p>{{ carte.description }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
